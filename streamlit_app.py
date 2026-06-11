@@ -31,7 +31,7 @@ ingridients_list = st.multiselect(
 )
 
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
-st.text(smoothiefroot_response.json)
+st.text(smoothiefroot_response.json())
 
 if ingridients_list :
    # st.write(ingridients_list)
