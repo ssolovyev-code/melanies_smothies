@@ -1,6 +1,7 @@
 # Import python packages
 import streamlit as st
 import os
+import requests  
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
@@ -28,6 +29,9 @@ ingridients_list = st.multiselect(
     "Choose up to 5 ingridients:",
     my_dataframe, max_selections=5
 )
+
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+st.text(smoothiefroot_response.json)
 
 if ingridients_list :
    # st.write(ingridients_list)
